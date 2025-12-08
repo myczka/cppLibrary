@@ -135,7 +135,7 @@ void num_enter(char select) {
 //
 //void init_sound(ma_engine &engine, ma_sound &sound, std::string file) {
 //    // Initialize the sound using the provided engine and file path
-//    file = "C:/Users/jorda/Desktop/Visual_Studio/Global_Bin/" + file;
+//    file = "./bin/" + file;
 //    if (ma_sound_init_from_file(&engine, file.c_str(), MA_SOUND_FLAG_STREAM, NULL, NULL, &sound) != MA_SUCCESS) {
 //        // Return false if initialization failed
 //        exit(0);
@@ -151,7 +151,7 @@ void num_enter(char select) {
 //}
 //
 //void playSound(ma_engine &engine, std::string file) {
-//    file = "C:/Users/jorda/Desktop/Visual_Studio/Global_Bin/" + file;
+//    file = "./bin/" + file;
 //    
 //    ma_engine_play_sound(&engine, file.c_str(), NULL);
 //}

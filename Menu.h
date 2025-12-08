@@ -125,7 +125,7 @@ void Menu::setPrompt(std::string prompt) {
 
 void Menu::playSelectSound(std::string ohYeah) {
     // Play the sound using miniaudio
-    ohYeah = "C:/Users/jorda/Gamer/Visual_Studio/Global_Bin" + ohYeah;
+    ohYeah = "./bin/" + ohYeah;
     ma_engine_play_sound(&engine, ohYeah.c_str(), NULL);
 }
 
