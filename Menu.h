@@ -2,6 +2,8 @@
 #define MENU_H
 #define MINIAUDIO_IMPLEMENTATION
 
+/* Copyright (c) 2025 Jordan Myczka */
+
 #include <string>
 #include <iostream>
 #include <Windows.h>
