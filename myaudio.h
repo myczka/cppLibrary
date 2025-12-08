@@ -8,6 +8,8 @@
 #include <vector>
 #include <string>
 
+static const string audioDir = "./sounds/";
+
 
 void seekTo(ma_sound &sound, float seconds) {
     ma_uint64 totalFrames;
@@ -41,7 +43,7 @@ void init(ma_engine &engine) {
 void init_sound(ma_engine &engine, ma_sound &sound, std::string file, bool bin = true) {
     // Initialize the sound using the provided engine and file path
     if (bin) {
-        file = "./bin/" + file;
+        file = audioDir + file;
     }
     else {
         file = "./" + file;
@@ -63,7 +65,7 @@ void uninit(ma_sound &sound) {
 
 void playSound(ma_engine &engine, std::string file, bool bin = true) {
     if (bin) {
-        file = "./bin/" + file;
+        file = audioDir + file;
     }
     else {
         file = "./" + file;
