@@ -4,7 +4,8 @@
 #define MINIAUDIO_IMPLEMENTATION
 
 #include "miniaudio.h"
-#include "console.h"
+#include <iostream>
+#include <vector>
 #include <string>
 
 
@@ -40,7 +41,7 @@ void init(ma_engine &engine) {
 void init_sound(ma_engine &engine, ma_sound &sound, std::string file, bool bin = true) {
     // Initialize the sound using the provided engine and file path
     if (bin) {
-        file = "C:/Users/jorda/Desktop/Visual_Studio/Global_Bin/" + file;
+        file = "C:/Users/jorda/Gamer/Visual_Studio/Global_Bin/" + file;
     }
     else {
         file = "./" + file;
@@ -62,17 +63,13 @@ void uninit(ma_sound &sound) {
 
 void playSound(ma_engine &engine, std::string file, bool bin = true) {
     if (bin) {
-        file = "C:/Users/jorda/Desktop/Visual_Studio/Global_Bin/" + file;
+        file = "C:/Users/jorda/Gamer/Visual_Studio/Global_Bin/" + file;
     }
     else {
         file = "./" + file;
     }
 
     ma_engine_play_sound(&engine, file.c_str(), NULL);
-}
-
-void playRandSnd(ma_engine &engine, std::vector<std::string> soundsNames) {
-    playSound(engine, soundsNames.at(get_rand(0, soundsNames.size() - 1)));
 }
 
 void volume(ma_sound &sound, float volume) {
@@ -133,56 +130,6 @@ void stop(ma_engine &engine) {
 
 void reset(ma_sound &sound) {
     ma_sound_set_at_end(&sound, false);
-}
-
-void waitTill(ma_sound &sound, float seconds) {
-    while ((ma_sound_get_time_in_milliseconds(&sound) / 1000.0f) < seconds) {
-        sleep(1);
-    }
-}
-
-void write(std::string yeet, int time, ma_engine &engine, std::string fileName) {
-    int increm = 0;
-    for (int i = 0; i < yeet.length(); ++i) {
-        //begin(flowey_voice);
-        wrap(i, yeet, increm);
-        if (yeet[i] != ' ') {
-            playSound(engine, fileName);
-        }
-        std::cout << yeet[i];
-        sleep(time);
-    }
-}
-
-void write(std::string yeet, int time, ma_engine &engine, std::vector<std::string> fileVec) {
-    int increm = 0;
-    for (int i = 0; i < yeet.length(); ++i) {
-        wrap(i, yeet, increm);
-        if (yeet[i] != ' ') {
-            playRandSnd(engine, fileVec);
-        }
-        std::cout << yeet[i];
-        sleep(time);
-    }
-}
-
-void num_enter(char select, ma_sound &sound) {
-    char choice;
-    std::cout << std::endl;
-    do {
-        choice = _getch();
-    } while (choice != select);
-    play(sound);
-    clear();
-}
-
-void num_enter(char select, ma_engine &engine, std::string soundStr) {
-    char choice;
-    do {
-        choice = _getch();
-    } while (choice != select);
-    playSound(engine, soundStr);
-    clear();
 }
 
 #endif
