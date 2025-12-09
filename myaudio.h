@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 
-static const string audioDir = "./sounds/";
+static string audioDir = "";
 
 
 void seekTo(ma_sound &sound, float seconds) {
