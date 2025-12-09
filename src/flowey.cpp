@@ -1,6 +1,6 @@
 /* 
 This programs presents an interactive command line turn-based RPG fight against Flowey.
-Copyright (c) 2022-2025 Jordan Myczka
+Copyright (c) 2022-2025 Jordan Myczka. All rights reserved.
 */
 
 //#include <sstream>
